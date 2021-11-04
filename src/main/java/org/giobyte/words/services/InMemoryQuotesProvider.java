@@ -23,12 +23,12 @@ public class InMemoryQuotesProvider implements QuotesProvider {
 
 
     @Override
-    public Quote getQuote(List<String> excludeIds) {
+    public Quote getRandomQuote(List<Long> excludedIds) {
         return quotes.get(0);
     }
 
     @Override
-    public Quote getQuote() {
-        return getQuote(null);
+    public Quote getQuote(long id) {
+        return null;
     }
 }

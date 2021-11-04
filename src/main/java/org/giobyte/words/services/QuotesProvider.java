@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface QuotesProvider {
 
-    Quote getQuote(@Nullable List<String> excludeIds);
+    Quote getRandomQuote(@Nullable List<Long> excludedIds);
 
-    Quote getQuote();
+    Quote getQuote(long id);
 }
