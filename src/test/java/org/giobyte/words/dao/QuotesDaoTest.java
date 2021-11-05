@@ -41,12 +41,15 @@ public class QuotesDaoTest {
     @Test
     public void testGetRandomQuote() {
         Quote quote1 = new Quote();
+        quote1.setId(1L);
         quote1.setQuote("Lorem Ipsum");
 
         Quote quote2 = new Quote();
+        quote2.setId(2L);
         quote2.setQuote("Lorem Ipsum");
 
         Quote quote3 = new Quote();
+        quote3.setId(3L);
         quote3.setQuote("Lorem Ipsum");
 
         quotesDao.save(quote1);

@@ -12,7 +12,7 @@ public interface QuotesDao extends CrudRepository<Quote, Long> {
             nativeQuery = true,
             value = "SELECT * FROM quote " +
                     "WHERE id NOT IN :excludedIds " +
-                    "ORDER BY RANDOM() LIMIT 1"
+                    "ORDER BY RAND() LIMIT 1"
     )
     Quote randomQuote(List<Long> excludedIds);
 }
