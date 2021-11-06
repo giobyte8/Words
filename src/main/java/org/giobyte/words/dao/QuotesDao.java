@@ -11,6 +11,13 @@ public interface QuotesDao extends CrudRepository<Quote, Long> {
     @Query(
             nativeQuery = true,
             value = "SELECT * FROM quote " +
+                    "ORDER BY RAND() LIMIT 1;"
+    )
+    Quote randomQuote();
+
+    @Query(
+            nativeQuery = true,
+            value = "SELECT * FROM quote " +
                     "WHERE id NOT IN :excludedIds " +
                     "ORDER BY RAND() LIMIT 1"
     )

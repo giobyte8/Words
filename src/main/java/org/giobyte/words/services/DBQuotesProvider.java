@@ -5,6 +5,7 @@ import org.giobyte.words.entities.Quote;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service("dbQuotesProvider")
 public class DBQuotesProvider implements QuotesProvider {
@@ -17,6 +18,10 @@ public class DBQuotesProvider implements QuotesProvider {
 
     @Override
     public Quote getRandomQuote(List<Long> excludedIds) {
+        if (Objects.isNull(excludedIds) || excludedIds.isEmpty()) {
+            return quotesDao.randomQuote();
+        }
+
         return quotesDao.randomQuote(excludedIds);
     }
 
