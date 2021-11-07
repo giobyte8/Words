@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Prod configs ###
+docker/application.yml
