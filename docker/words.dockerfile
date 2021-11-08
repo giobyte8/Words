@@ -26,10 +26,6 @@
 # Running through docker run
 # > docker run -d -p 7000:80 --name words words:1.0.0
 #
-# Running through docker compose
-# > TODO
-# >
-#
 
 FROM openjdk:17
 ARG wordsVersion=0.0.1-SNAPSHOT

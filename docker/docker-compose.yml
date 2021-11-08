@@ -1,0 +1,32 @@
+#
+# Build words docker image for specified version of
+# application and starts the container.
+#
+# The app should be previously compiled and below paths
+# must be valid relatively to the build context of words image
+#  - build/libs/words-${WORDS_VERSION}.jar
+#  - docker/application.yml
+#
+# WORDS_VERSION is an environment variable, you can define it
+# in your current shell like below example or in an .env file
+#
+# Inline in current shell:
+# > WORDS_VERSION=1.0.0 docker-compose up -d
+#
+# For .env file check ref:
+# > https://docs.docker.com/compose/environment-variables/
+#
+
+version: '3'
+services:
+  words:
+    build:
+      context: ../
+      dockerfile: docker/words.dodockkdkdckerfile
+      args:
+        wordsVersion: ${WORDS_VERSION}
+    image: giobyte8/words:${WORDS_VERSION}
+    container_name: words-${WORDS_VERSION}
+    ports:
+      - "7000:80"
+    restart: unless-stopped
