@@ -11,7 +11,6 @@ cd "${HERE}/.." || return
 APP_ROOT=$(pwd)
 cd "${HERE}" || return
 
-echo
 echo "Building app from ${APP_ROOT}"
 
 docker run --rm -u gradle \

@@ -38,3 +38,4 @@ out/
 
 ### Prod configs ###
 docker/application.yml
+docker/.env
